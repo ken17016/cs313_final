@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+
+    <div class="card" data-testid='contact-form' id='contactForm' style=" marginLeft: 'auto', marginRight: 'auto', width: '38rem' ">
+      <div class="text-center card-title"><h1>Contact Form</h1></div>
+      <div class="card-text">
+      Please fill in your contact and we will have someone get back to you
+      as soon as possible.
+      </div>
+      <form class="was-validated">
+        <Alert
+          key="success"
+          data-cy="alert"
+          style=" textTransform: 'uppercase' "
+          variant="success">
+        "success"
+        </Alert>
+        <div class="form-group">
+          <label htmlFor="type">Veteran or Paver?</label>
+          <div="form-control">
+            class="custom-select"
+            required
+            as="select"
+            id="type"
+            name="type"
+            data-cy="user-type"
+            onChange="this.changeHandler">
+          <option value="">Choice Veteran or Paver</option>
+          <option value="vet">Veteran</option>
+          <option value="paver">Paver</option>
+          </div>
+        </div>
+        <div class="form-group">
+          <label htmlFor="fullName">Name</label>
+          <input
+            type="text"
+            name="fullName"
+            data-cy="user-fullName"
+            class="form-control is-valid"
+            id="fullName"
+            placeholder="Full name"
+            onChange="this.changeHandler"
+            required
+            />
+        </div>
+        <div class="form-group">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            class="form-control is-valid"
+            name="email"
+            data-cy="user-email"
+            id="email"
+            placeholder="Email"
+            required
+            onChange="this.changeHandler"
+            />
+        </div>
+        <div class="form-group">
+          <label htmlFor="comment">Comment</label>
+          <textarea
+            data-cy="user-comment"
+            class="form-control is-invalid"
+            id="comment"
+            name="comment"
+            placeholder="Please leave your comment here"
+            required
+            onChange="this.changeHandler"
+            />
+        </div>
+        <div class="mx-auto mb-2">
+          <Button
+            variant="primary"
+            active
+            size="lg"
+            data-cy="submit"
+            id='contact-form-submit'
+            onClick="this.submitContact.bind(this)">
+            Submit
+          </Button>
+        </div>
+      </form>
+    </div>
+
+  </body>
+</html>

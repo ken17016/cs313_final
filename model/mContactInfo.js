@@ -25,7 +25,7 @@ const contactInfoDb = (
     pool.query(sql, params, (err, result) => {
         if (err) {
             callback(err, null);
-        }*/
+        }
     callback(null, { success: "success" });
     });
 };

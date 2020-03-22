@@ -2,17 +2,23 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <style>
+    .hide {
+       display:none;
+    }
+    </style>
   </head>
   <body>
-
-    <div class="card"  id='contactForm' style=" marginLeft: auto; marginRight: auto; width: 38rem;">
+    <div class="card"  id='contactForm' style=" margin-left: auto; margin-right: auto; width: 38rem;">
       <div class="text-center card-title"><h1>Contact Form</h1></div>
+      <div class="<%= success %>">
+        Success
+      </div>
       <div class="card-text">
         Please fill in your contact and we will have someone get back to you
         as soon as possible.
       </div>
-      <form class="was-validated">
+      <form class="was-validated" method="POST" action="/api/createContact">
         <div class="form-group">
           <label htmlFor="type">Veteran or Paver?</label>
           <select 
@@ -49,8 +55,7 @@
         </div>
         <div class="form-group">
           <label htmlFor="comment">Comment</label>
-          <textarea>
-          </textarea>
+          <textarea style="resize:auto;" id="comment" value="" name="comment"></textarea>
         </div>
         <div class="mx-auto mb-2">
           <button

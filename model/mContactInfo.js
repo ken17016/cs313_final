@@ -1,7 +1,13 @@
-const pool = require("./db.js")
+const pool = require("./db.js");
 
-const contactInfoDb = (contact_type, contact_name, contact_email, contact_comment, callback) => {
-    const sql =
+const contactInfoDb = (
+    contact_type,
+    contact_name,
+    contact_email,
+    contact_comment,
+    callback
+) => {
+        const sql =
         `Insert into contact_info (
         contact_type
         , contact_name
@@ -19,12 +25,11 @@ const contactInfoDb = (contact_type, contact_name, contact_email, contact_commen
     pool.query(sql, params, (err, result) => {
         if (err) {
             callback(err, null);
-        }
-        callback(null, { success: 'success' });
+        }*/
+    callback(null, { success: "success" });
     });
 };
 
 module.exports = {
     contactInfoDb: contactInfoDb
 };
-

@@ -12,8 +12,9 @@ const app = express();
 
 /** Routes */
 const createContact = require("./routes/contactinfo.js");
-const contactUs = require("./routes/contactUs.js");
+const contactPage = require("./routes/contactUs.js");
 const contactDashboard = require("./routes/contactDashboard.js");
+//const contactDashboardPage = require("./routes/contactDashboardPage.js");
 
 app.use(cors());
 app.use((req, res, next) => {
@@ -52,10 +53,11 @@ if (true) {
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.set("view engine", "ejs");
+
 app.use("/api/createContact", cors(), createContact);
-//app.get('/contact', (req, res) => res.render('pages/contactUs'));
-app.use("/contact", cors(), contactUs);
-app.use("/contact_dashboard", contactDashboard);
+app.use("/", cors(), contactPage);
+app.use("/api/contact_dashboard", cors(), contactDashboard);
+//app.use("/contact_dashboard", cors(), contactDashboardPage);
 
 const server = createServer(app);
 

@@ -1,7 +1,6 @@
 var express = require("express");
 var router = express.Router();
 const bodyParser = require("body-parser");
-var contactDashboard = require("../controller/cContactDashboard.js");
 
 express()
     .use(bodyParser.json())
@@ -11,7 +10,6 @@ router.use(function timeLog(req, res, next) {
     next();
 });
 
-/** Get contact page */
-router.get("/", contactDashboard.contactDashboard);
+router.get("/", (req, res) => res.render("pages/contactDashboard"));
 
 module.exports = router;

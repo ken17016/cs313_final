@@ -14,7 +14,7 @@ const app = express();
 const createContact = require("./routes/contactinfo.js");
 const contactPage = require("./routes/contactUs.js");
 const contactDashboard = require("./routes/contactDashboard.js");
-//const contactDashboardPage = require("./routes/contactDashboardPage.js");
+const contactDashboardPage = require("./routes/contactDashboardPage.js");
 
 app.use(cors());
 app.use((req, res, next) => {
@@ -57,7 +57,7 @@ app.set("view engine", "ejs");
 app.use("/api/createContact", cors(), createContact);
 app.use("/", cors(), contactPage);
 app.use("/api/contact_dashboard", cors(), contactDashboard);
-//app.use("/contact_dashboard", cors(), contactDashboardPage);
+app.use("/contact_dashboard", cors(), contactDashboardPage);
 
 const server = createServer(app);
 
